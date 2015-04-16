@@ -45,6 +45,20 @@ paths:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
+  /index:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: index
+    x-a127-apply: {}
+    get:
+      description: sends the index.html file to the requestor
+      # used as the method name of the controller
+      operationId: index
+      responses:
+        "200":
+          description: Success
+        # responses may fall through to errors
+        default:
+          description: Error
 # complex objects have schema definitions
 definitions:
   HelloWorldResponse:
