@@ -12,6 +12,8 @@ a127.init(function(config) {
   // include a127 middleware
   app.use(a127.middleware(config));
 
+  app.use('/public', express.static('public'));
+
   // error handler to emit errors as a json string
   app.use(function(err, req, res, next) {
     if (err && typeof err === 'object') {
